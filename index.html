@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego Brasil — Portfólio</title>
+<meta name="description" content="Diego Hamed de Assis Brasil — Staff Software Engineer. IA aplicada, LLMs, processamento de documentos e imagens, arquitetura de sistemas.">
+<meta property="og:title" content="Diego Hamed de Assis Brasil — Portfólio">
+<meta property="og:description" content="Staff Software Engineer. IA aplicada, LLMs, processamento de documentos e imagens, arquitetura de sistemas.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://diegohabrasil.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f6f4;
+    --surface: #ffffff;
+    --ink: #1c1c1a;
+    --ink-2: #474744;
+    --ink-3: #7b7b77;
+    --line: #e2e2de;
+    --line-2: #cfcfca;
+    --accent: #3b4650;
+    --chip: #efefec;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131313;
+      --surface: #1b1b1a;
+      --ink: #ebebe8;
+      --ink-2: #b9b9b4;
+      --ink-3: #85857f;
+      --line: #2b2b29;
+      --line-2: #3a3a37;
+      --accent: #a9b6c0;
+      --chip: #232322;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131313; --surface: #1b1b1a; --ink: #ebebe8; --ink-2: #b9b9b4; --ink-3: #85857f;
+    --line: #2b2b29; --line-2: #3a3a37; --accent: #a9b6c0; --chip: #232322;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--ink); }
+
+  .page { max-width: 1000px; margin: 0 auto; padding: 72px 40px 56px; }
+
+  /* ---------- header ---------- */
+  header.hero { padding-bottom: 40px; border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 18px;
+  }
+  h1 {
+    font-size: 44px; line-height: 1.08; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .role { font-size: 19px; font-weight: 300; color: var(--ink-2); margin: 0 0 28px; max-width: 46ch; text-wrap: pretty; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 8px 28px; font-family: var(--mono); font-size: 13px; color: var(--ink-2); }
+  .contacts span::before { content: "— "; color: var(--ink-3); }
+  .contacts .pdf {
+    margin-left: auto; text-decoration: none; color: var(--ink);
+    border: 1px solid var(--line-2); border-radius: 4px; padding: 1px 10px;
+  }
+  .contacts .pdf:hover { border-color: var(--ink); }
+
+  .facts {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .fact { padding: 16px 20px 0 0; }
+  .fact + .fact { padding-left: 20px; border-left: 1px solid var(--line); }
+  .fact dt { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+  .fact dd { margin: 4px 0 0; font-size: 14px; color: var(--ink); }
+
+  /* ---------- sections ---------- */
+  section.block {
+    display: grid; grid-template-columns: 180px 1fr; gap: 32px;
+    padding: 44px 0; border-bottom: 1px solid var(--line);
+  }
+  section.block > h2 {
+    font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-3); margin: 4px 0 0;
+  }
+  .lead { font-size: 18px; font-weight: 300; line-height: 1.6; color: var(--ink); margin: 0; max-width: 62ch; text-wrap: pretty; }
+  .lead + .lead { margin-top: 14px; }
+  p { margin: 0; text-wrap: pretty; }
+
+  /* ---------- focus areas ---------- */
+  .areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .area {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px 20px 20px;
+    break-inside: avoid;
+  }
+  .area .num { font-family: var(--mono); font-size: 12px; color: var(--ink-3); }
+  .area h3 { font-size: 16px; font-weight: 600; margin: 6px 0 12px; letter-spacing: -0.005em; }
+  .area ul { margin: 0; padding: 0; list-style: none; }
+  .area li { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; padding: 7px 0; border-top: 1px solid var(--line); }
+  .area li:first-child { border-top: 0; padding-top: 0; }
+  .area li b { font-weight: 500; color: var(--ink); }
+
+  /* ---------- pipeline diagram ---------- */
+  .flow-wrap { margin-top: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 20px 18px; break-inside: avoid; }
+  .flow-title { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
+  .flow { display: flex; align-items: stretch; flex-wrap: nowrap; }
+  .step {
+    display: flex; flex-direction: column; justify-content: center;
+    border: 1px solid var(--line-2); border-radius: 4px; padding: 8px 7px; background: var(--bg);
+    font-size: 11.5px; line-height: 1.3; min-width: 0; flex: 1 1 0;
+  }
+  .step small { display: block; font-family: var(--mono); font-size: 10px; color: var(--ink-3); margin-top: 2px; }
+  .step.split { padding: 0; border: 0; background: none; gap: 6px; }
+  .step.split > div { border: 1px solid var(--line-2); border-radius: 4px; padding: 6px 10px; background: var(--bg); }
+  .step.em { border-color: var(--accent); }
+  .step.wide { flex-grow: 1.45; }
+  .arrow { display: flex; align-items: center; padding: 0 4px; flex: none; color: var(--ink-3); font-family: var(--mono); font-size: 13px; }
+  .flow-note { margin-top: 14px; font-size: 12.5px; color: var(--ink-3); line-height: 1.5; }
+
+  /* ---------- cases ---------- */
+  .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .case {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px 22px 20px;
+    display: flex; flex-direction: column; gap: 10px; break-inside: avoid;
+  }
+  .case.wide { grid-column: 1 / -1; }
+  .case .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+  .case h3 { font-size: 16.5px; font-weight: 600; margin: 0; line-height: 1.35; letter-spacing: -0.005em; }
+  .case p { font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+  .case ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+  .case ul li + li { margin-top: 4px; }
+  .case .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 4px; }
+  .tag { font-family: var(--mono); font-size: 11px; color: var(--ink-2); background: var(--chip); border-radius: 3px; padding: 2px 7px; }
+
+  /* ---------- timeline ---------- */
+  .job { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 0 0 26px; break-inside: avoid; }
+  .job + .job { padding-top: 26px; border-top: 1px solid var(--line); }
+  .job:last-child { padding-bottom: 0; }
+  .when { font-family: var(--mono); font-size: 12.5px; color: var(--ink-3); line-height: 1.5; }
+  .job h3 { font-size: 16px; font-weight: 600; margin: 0; }
+  .job .org { font-size: 14px; color: var(--ink-2); margin: 2px 0 10px; }
+  .job ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; line-height: 1.55; }
+  .job ul li + li { margin-top: 5px; }
+  .job .sub { margin-top: 10px; font-size: 13px; color: var(--ink-3); }
+  .early { display: grid; grid-template-columns: 150px 1fr; gap: 6px 20px; font-size: 13.5px; color: var(--ink-2); }
+  .early .when { font-size: 12px; }
+
+  /* ---------- simple rows ---------- */
+  .rows { display: grid; gap: 18px; }
+  .row { display: grid; grid-template-columns: 150px 1fr; gap: 20px; break-inside: avoid; }
+  .row h3 { font-size: 15px; font-weight: 600; margin: 0; line-height: 1.4; }
+  .row p { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+
+  /* ---------- skills ---------- */
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; }
+  .skills div { break-inside: avoid; }
+  .skills h3 { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 6px; }
+  .skills p { font-size: 14px; color: var(--ink); line-height: 1.6; }
+
+  footer { padding-top: 28px; font-family: var(--mono); font-size: 12px; color: var(--ink-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  /* ---------- responsive ---------- */
+  @media screen and (max-width: 820px) {
+    .page { padding: 40px 16px 40px; }
+    h1 { font-size: 34px; }
+    .role { font-size: 17px; }
+    section.block { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+    .areas, .cases, .skills { grid-template-columns: 1fr; }
+    .case .cols { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr; }
+    .fact + .fact { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); margin-top: 14px; }
+    .job, .row, .early { grid-template-columns: 1fr; gap: 4px; }
+    .flow { flex-direction: column; }
+    .arrow { transform: rotate(90deg); justify-content: center; padding: 2px 0; }
+  }
+
+  /* ---------- print / PDF ---------- */
+  @page { size: A4; margin: 14mm 13mm 14mm; }
+  @media print {
+    :root {
+      --bg: #ffffff; --surface: #ffffff; --ink: #1c1c1a; --ink-2: #44443f; --ink-3: #77776f;
+      --line: #e0e0db; --line-2: #c9c9c3; --accent: #3b4650; --chip: #f0f0ed;
+    }
+    body { font-size: 10pt; background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { max-width: none; padding: 0; }
+    header.hero { padding-bottom: 22px; }
+    h1 { font-size: 30pt; }
+    .role { font-size: 13pt; margin-bottom: 16px; }
+    .facts { margin-top: 20px; }
+    section.block { display: block; padding: 18px 0; }
+    section.block > h2 { margin: 0 0 10px; break-after: avoid; page-break-after: avoid; }
+    header.hero { padding-bottom: 16px; }
+    h1 { font-size: 26pt; margin-bottom: 8px; }
+    .facts { margin-top: 14px; }
+    .fact { padding-top: 10px; }
+    .lead { font-size: 10.5pt; line-height: 1.55; }
+    .lead + .lead { margin-top: 8px; }
+    .area li { font-size: 8.6pt; line-height: 1.42; padding: 4px 0; }
+    .area h3 { margin: 2px 0 8px; }
+    .flow-wrap { margin-top: 10px; padding: 12px 14px; }
+    .flow-title { margin-bottom: 10px; }
+    .flow-note { margin-top: 10px; font-size: 8.6pt; }
+    .step { font-size: 8pt; padding: 6px 7px; }
+    .step small { font-size: 6.6pt; }
+    .step.split > div { padding: 4px 7px; }
+    .arrow { padding: 0 3px; font-size: 9pt; }
+    .area h3, .case h3 { font-size: 11.5pt; }
+    .case p, .job ul, .row p { font-size: 9.5pt; }
+    .case ul, .early { font-size: 9pt; }
+    .lead { font-size: 11.5pt; }
+    .area, .case, .flow-wrap { border-color: var(--line); }
+    .step { background: #fafaf8; }
+    .step.split > div { background: #fafaf8; }
+    .case { padding: 14px 16px; gap: 7px; }
+    .area { padding: 14px 14px; }
+    .areas, .cases { gap: 10px; }
+    .job { grid-template-columns: 30mm 1fr; padding-bottom: 14px; }
+    .job + .job { padding-top: 14px; }
+    .row, .early { grid-template-columns: 30mm 1fr; }
+    .page-break { break-before: auto; }
+    .rows { break-inside: avoid; }
+    a { text-decoration: none; }
+    .contacts .pdf { display: none; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="hero">
+    <p class="eyebrow">Portfólio · 2026</p>
+    <h1>Diego Hamed de Assis Brasil</h1>
+    <p class="role">Staff Software Engineer — IA aplicada, LLMs, processamento de documentos e imagens, arquitetura de sistemas.</p>
+    <div class="contacts">
+      <span>Porto Alegre, RS · Brasil</span>
+      <span><a href="mailto:diegohabrasil@gmail.com">diegohabrasil@gmail.com</a></span>
+      <span><a href="https://www.linkedin.com/in/dhabrasil/">linkedin.com/in/dhabrasil</a></span>
+      <a class="pdf" href="portfolio-diego-brasil.pdf" download>Baixar PDF ↓</a>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt>Hoje</dt><dd>Staff Software Engineer e sócio · Planton</dd></div>
+      <div class="fact"><dt>Formação</dt><dd>Eng. Elétrica + Especialização em Eng. de Software · PUCRS</dd></div>
+      <div class="fact"><dt>Foco</dt><dd>Agentes de LLM, busca semântica, documentos, system design</dd></div>
+    </dl>
+  </header>
+
+  <section class="block">
+    <h2>Sobre</h2>
+    <div>
+      <p class="lead">Construo produtos de IA que transformam dados heterogêneos — planilhas, PDFs, fotos, áudio, texto livre — em informação estruturada, rastreável e pronta para decisão.</p>
+      <p class="lead">Venho da engenharia elétrica e do hardware, passei por backend, dados e MLOps, e hoje atuo do desenho do sistema ao código de produção: agentes de LLM, recuperação de informação, pipelines de ingestão e arquiteturas que continuam saudáveis quando boa parte do código é escrita em parceria com agentes de IA.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Áreas de atuação</h2>
+    <div>
+      <div class="areas">
+        <article class="area">
+          <span class="num">01</span>
+          <h3>LLMs e agentes</h3>
+          <ul>
+            <li><b>Agentes especializados</b> orquestrados com LangChain e LangGraph, com ferramentas e saída estruturada validada por schema.</li>
+            <li><b>RAG</b> com gestão de contexto e de conhecimento para agentes.</li>
+            <li><b>Busca híbrida</b>: lexical (BM25) + vetorial, fusão de rankings, rerank e LLM como juiz.</li>
+            <li><b>Classificação hierárquica</b>: o modelo desce uma taxonomia escolhendo entre poucos ramos por nível, em vez de encarar o catálogo inteiro.</li>
+            <li><b>Multi-provedor</b> atrás de portas e adaptadores: provedores de nuvem, APIs de mercado e modelos locais.</li>
+          </ul>
+        </article>
+        <article class="area">
+          <span class="num">02</span>
+          <h3>Documentos e imagens</h3>
+          <ul>
+            <li><b>Ingestão multiformato</b>: XLSX, CSV, PDF, DOCX, JPEG e PNG com Docling, PyPDF, Unstructured e OCR.</li>
+            <li><b>OCR em cascata</b>: um modelo localiza a região de interesse, outro reconhece os caracteres.</li>
+            <li><b>Extração com LLM</b> de documentos financeiros e operacionais, inclusive com modelos locais para privacidade total.</li>
+            <li><b>Normalização de texto livre</b>: forma canônica, unidades, sinônimos e reescrita assistida por LLM antes do match.</li>
+          </ul>
+        </article>
+        <article class="area">
+          <span class="num">03</span>
+          <h3>Arquitetura</h3>
+          <ul>
+            <li><b>Camadas com dependência para dentro</b> (api → application → domain) e infraestrutura isolada.</li>
+            <li><b>Fitness functions no CI</b>: scripts que verificam tamanho de arquivo, direção de imports e isolamento do ORM.</li>
+            <li><b>Assíncrono</b> com mensageria sobre PostgreSQL; sistemas cloud-native em AWS e GCP.</li>
+            <li><b>Rastreabilidade</b>: cada decisão grava trace, tokens, custo, latência e versão do modelo.</li>
+            <li><b>Tipagem estrita</b> (mypy strict, Pydantic) e testes como contrato.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="flow-wrap" aria-label="Pipeline típico de correspondência semântica">
+        <div class="flow-title">Padrão recorrente · correspondência de texto livre contra catálogo técnico</div>
+        <div class="flow">
+          <div class="step">Texto livre<small>planilha / PDF / foto</small></div>
+          <div class="arrow">→</div>
+          <div class="step">Normalização<small>chave canônica</small></div>
+          <div class="arrow">→</div>
+          <div class="step">Reescrita<small>LLM, PT → EN</small></div>
+          <div class="arrow">→</div>
+          <div class="step split wide"><div>BM25</div><div>Embeddings</div></div>
+          <div class="arrow">→</div>
+          <div class="step">Fusão + rerank<small>top-k</small></div>
+          <div class="arrow">→</div>
+          <div class="step em">Juiz LLM<small>escolha + confiança</small></div>
+          <div class="arrow">→</div>
+          <div class="step wide">Regras determinísticas<small>resultado auditável</small></div>
+        </div>
+        <p class="flow-note">Toda chamada externa é cacheada pelo hash do payload, com temperatura zero e teto de gasto por execução. A mesma entrada com a mesma configuração gera sempre a mesma saída, e o limiar de auto-aceite é calibrado para uma precisão-alvo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Trabalhos em destaque</h2>
+    <div class="cases">
+
+      <article class="case wide">
+        <span class="kicker">LLM · busca semântica · avaliação</span>
+        <h3>Correspondência entre itens descritos em texto livre e um catálogo técnico de referência</h3>
+        <p>Clientes descrevem compras em português, cada um do seu jeito; cada item precisa ser ligado ao equivalente num catálogo técnico em inglês. Desenhei e implementei duas estratégias concorrentes sobre a mesma base, comparadas pela mesma régua:</p>
+        <div class="cols">
+          <ul>
+            <li><b>Descida hierárquica</b>: o LLM percorre uma taxonomia internacional de produtos, decidindo entre poucos ramos por nível; barata e explicável.</li>
+            <li><b>Busca híbrida + juiz</b>: BM25 e embeddings, fusão de rankings, rerank e um LLM que escolhe entre os finalistas ou declara "sem correspondência".</li>
+          </ul>
+          <ul>
+            <li><b>Harness de benchmark</b> com dataset dourado, split dev/test protegido contra vazamento, precisão@1, recall@10, cobertura com precisão ≥ 95% e intervalos de confiança.</li>
+            <li><b>Engenharia de custo</b>: cache por hash, teto de gasto, verificação de idempotência, preço por modelo versionado.</li>
+          </ul>
+        </div>
+        <div class="tags">
+          <span class="tag">Python 3.13</span><span class="tag">LLM gerenciado</span><span class="tag">Embeddings + rerank</span><span class="tag">BM25</span><span class="tag">NumPy</span><span class="tag">Pydantic</span><span class="tag">SQLite</span><span class="tag">mypy strict</span>
+        </div>
+      </article>
+
+      <article class="case">
+        <span class="kicker">Agentes · produto</span>
+        <h3>Plataforma de agentes de IA para dados corporativos</h3>
+        <p>Sistema web de ponta a ponta com agentes de LLM especializados, adotado por várias empresas. Recebe o dado no formato em que ele já existe — chat, formulário, PDF, planilha, integração com ERP — e entrega um resultado rastreável até a linha de origem.</p>
+        <div class="tags"><span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span></div>
+      </article>
+
+      <article class="case">
+        <span class="kicker">Visão computacional · OCR</span>
+        <h3>Leitura de medidores de energia por foto de celular</h3>
+        <p>Prova de conceito de OCR em cascata: um primeiro modelo encontra a região de interesse no visor, um segundo lê os caracteres dentro dela. Objetivo: permitir autoleitura pelo cliente e registro de leitura em campo com uma única foto.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Tesseract</span><span class="tag">ROI</span><span class="tag">Android</span></div>
+      </article>
+
+      <article class="case">
+        <span class="kicker">MLOps · dados · emergência</span>
+        <h3>Do áudio do atendimento à informação, durante as enchentes no RS</h3>
+        <p>Pipeline emergencial: transcrição do atendimento ao cliente com speech-to-text, ETL com LLM para transformar conversa em dado estruturado, carga em PostgreSQL e depois migração para BigQuery. Orquestração completa em Apache Airflow.</p>
+        <div class="tags"><span class="tag">Speech-to-text</span><span class="tag">OpenAI</span><span class="tag">Airflow</span><span class="tag">BigQuery</span><span class="tag">GCP</span></div>
+      </article>
+
+      <article class="case">
+        <span class="kicker">Arquitetura · engenharia com agentes</span>
+        <h3>Guardrails de arquitetura para código escrito por LLMs</h3>
+        <p>Testes unitários introduzidos numa base legada, de 0% a mais de 20% de cobertura, e scripts de validação de arquitetura no CI: limite de tamanho de arquivo, direção de dependências, ORM sem regra de negócio. Os agentes rodam as verificações após cada mudança e refazem o trabalho quando falham.</p>
+        <div class="tags"><span class="tag">CI</span><span class="tag">Fitness functions</span><span class="tag">FastAPI</span><span class="tag">SQLModel</span><span class="tag">Claude Code</span></div>
+      </article>
+
+      <article class="case wide">
+        <span class="kicker">Open source · extração de documentos</span>
+        <h3>Organizador de investimentos para a declaração de IR</h3>
+        <p>Você envia os PDFs de corretoras e bancos e o sistema organiza cada ativo pelo código correspondente na declaração. Funciona com modelos locais via Ollama, com privacidade total e banco SQLite local, ou com modelos de mercado da Anthropic e da OpenAI. Roda via docker-compose. Código aberto a contribuições.</p>
+        <div class="tags"><span class="tag">LLM</span><span class="tag">Ollama</span><span class="tag">Anthropic</span><span class="tag">OpenAI</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="block page-break">
+    <h2>Experiência</h2>
+    <div>
+      <div class="job">
+        <div class="when">jul 2026 — hoje<br>abr 2025 — jul 2026</div>
+        <div>
+          <h3>Staff Software Engineer · Software Engineer</h3>
+          <p class="org">Planton · Porto Alegre · sócio desde 2026</p>
+          <ul>
+            <li>Pipelines de ingestão de dados estruturados e não estruturados (XLSX, PDF, DOCX, JPEG, PNG) com Docling, PyPDF, Unstructured e OCR.</li>
+            <li>Sistemas web de ponta a ponta com agentes de LLM especializados, adotados por várias empresas; orquestração com LangChain e LangGraph.</li>
+            <li>Sistemas RAG, incluindo gestão de contexto e conhecimento para agentes.</li>
+            <li>Arquiteturas assíncronas com mensageria sobre PostgreSQL; sistemas cloud-native com princípios de design distribuído.</li>
+            <li>Liderança de system design para transformar soluções em produtos escaláveis; aplicações full stack com FastAPI e Next.js.</li>
+            <li>Uso intensivo de agentes de código (Claude Code, Claude Cowork, TRAE) e criação de "skills" reutilizáveis para acelerar o fluxo de engenharia.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">dez 2023 — abr 2025</div>
+        <div>
+          <h3>Fullstack Developer</h3>
+          <p class="org">Grupo Equatorial Energia · Porto Alegre</p>
+          <ul>
+            <li>Pipeline emergencial de MLOps/ETL em torno de speech-to-text e LLM para o atendimento durante as enchentes no RS; PostgreSQL → BigQuery; Apache Airflow.</li>
+            <li>OCR em cascata (ROI + reconhecimento de caracteres) para leitura de medidores por foto.</li>
+            <li>GCP, Vertex AI, Next.js, Android.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">jun 2022 — dez 2023</div>
+        <div>
+          <h3>Software Developer</h3>
+          <p class="org">CWI Software · Porto Alegre</p>
+          <ul>
+            <li>Migração de um microsserviço de vendas de PHP para Python, com novas funcionalidades e reforço de segurança.</li>
+            <li>Módulos em C para integração com APIs de parceiros: ativação, suspensão, cancelamento e reativação de pacotes.</li>
+            <li>Evolução de um sistema legado de carrinho de compras usado por milhares de pessoas; Jenkins, SonarQube, Docker, Linux CLI e VIM.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2018 — 2022</div>
+        <div>
+          <h3>Engenharia, P&amp;D e excelência operacional</h3>
+          <p class="org">Antes do software</p>
+          <div class="early">
+            <span class="when">fev 2021 — mar 2022</span><span><b>Gerdau</b> · automação e análise de dados com Power BI, Power Apps e Power Automate; Scrum, A3, Kaizen.</span>
+            <span class="when">jul 2019 — jul 2020</span><span><b>TDK</b> · desenvolvimento de capacitores de polímero, testes de vida útil e estresse, análise em Minitab.</span>
+            <span class="when">nov 2018 — jun 2019</span><span><b>CEDER · PUCRS</b> · pesquisa em energia solar, eólica, bancos de baterias e eficiência energética.</span>
+            <span class="when">abr — out 2018</span><span><b>Governo do RS</b> · projetos elétricos e laudos de vistoria para escolas públicas.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Palestras e conteúdo</h2>
+    <div class="rows">
+      <div class="row">
+        <span class="when">set 2026</span>
+        <div>
+          <h3>IA aplicada: dados complexos em produtos escaláveis</h3>
+          <p>Semana Caldeira 2026, Instituto Caldeira, Porto Alegre. Como uma arquitetura de dados bem construída sustenta um produto de IA em produção.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="when">mai 2026</span>
+        <div>
+          <h3>Aplicação de IA no inventário de emissões</h3>
+          <p>Episódio de podcast sobre o uso de LLMs para automatizar trabalho analítico intensivo em dados.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="when">mai 2026</span>
+        <div>
+          <h3>Auditoria automática de arquitetura para código gerado por LLM</h3>
+          <p>Artigo sobre testes e fitness functions no CI para manter modularidade e evitar dívida técnica quando agentes escrevem código.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Formação</h2>
+    <div class="rows">
+      <div class="row">
+        <span class="when">2024 — 2025</span>
+        <div><h3>Especialização em Engenharia de Software</h3><p>PUCRS · pós-graduação lato sensu, desenvolvimento full stack</p></div>
+      </div>
+      <div class="row">
+        <span class="when">2016 — 2023</span>
+        <div><h3>Bacharelado em Engenharia Elétrica</h3><p>PUCRS · eletrônica, microcontroladores (Arduino, ESP8266, STM32)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Competências</h2>
+    <div class="skills">
+      <div><h3>IA e LLMs</h3><p>LangChain, LangGraph, RAG, embeddings, rerank, LLM como juiz, saída estruturada, avaliação com dataset dourado, AWS Bedrock, OpenAI, Gemini, Ollama, Vertex AI</p></div>
+      <div><h3>Documentos e imagens</h3><p>OCR (Tesseract), Docling, PyPDF, Unstructured, detecção de região de interesse, extração de PDF e planilhas, speech-to-text</p></div>
+      <div><h3>Backend e web</h3><p>Python, FastAPI, Flask, Pydantic, SQLAlchemy, SQLModel, TypeScript, JavaScript, Next.js, C</p></div>
+      <div><h3>Dados</h3><p>PostgreSQL, BigQuery, SQLite, Apache Airflow, ETL, Polars, NumPy, BM25</p></div>
+      <div><h3>Infra e entrega</h3><p>Docker, AWS, GCP, Terraform, Ansible, Jenkins, SonarQube, GitHub, Linux</p></div>
+      <div><h3>Prática de engenharia</h3><p>System design, arquitetura em camadas, TDD, mypy strict, fitness functions, engenharia com agentes de código, liderança técnica</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Diego Hamed de Assis Brasil</span>
+    <span>diegohabrasil@gmail.com · linkedin.com/in/dhabrasil</span>
+  </footer>
+
+</main>
+</body>
+</html>
